@@ -1,0 +1,23 @@
+PODS:
+  - CCBottomRefreshControl (0.5.2)
+  - MdcLib-Skyprepare (2.0.1):
+    - CCBottomRefreshControl (~> 0.5.1)
+    - SDWebImage (~> 3.8)
+    - UIImageView-Letters
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
+  - UIImageView-Letters (1.1.4)
+
+DEPENDENCIES:
+  - MdcLib-Skyprepare
+
+SPEC CHECKSUMS:
+  CCBottomRefreshControl: 389780b4488321c91d18f66a6da5ef9606df6de5
+  MdcLib-Skyprepare: 6e279d10225cbab37e3587092744dfeb6563573b
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  UIImageView-Letters: f62db28076797adf3560ab7410647dc6899b9eef
+
+PODFILE CHECKSUM: 6f546f01c8528c2d11b639d4c67a38378af3c738
+
+COCOAPODS: 1.2.1
