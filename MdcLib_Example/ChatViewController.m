@@ -84,6 +84,12 @@
                 NSLog(@"connectBtnClicked %@", @"ok");
             }
         }];
+        
+        //neeu set dataCallback = nil, tin nhan cua room tat ca nhan ve delegate onCommentMesg.
+        
+        /*[[MdcLib sharedInstance] joinRoom:roomid dataCallback:nil joinError:^(NSError * _Nullable error) {
+            self.FBIwarningView.text = [NSString stringWithFormat:@"joinRoom %@ success",roomid ];
+        }];*/
     }
     
     [self.view endEditing:YES];
@@ -117,6 +123,10 @@
     NSLog(@"recive mesg system%@", mesg);
     self.messageView.text = [NSString stringWithFormat:@"%@\n",mesg ];
     
+}
+
+- (void)updateListMesg:(NSArray *)mesg{
+    NSLog(@"recive mesg system%@", mesg);
 }
 
 - (void)onConnected{
