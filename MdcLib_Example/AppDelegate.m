@@ -113,6 +113,9 @@
     NSLog(@"disConnected");
 }
 
+- (void)onSystemError:(NSError *)error{
+    // lỗi trong hệ thống của lib MDC
+}
 
 
 @end

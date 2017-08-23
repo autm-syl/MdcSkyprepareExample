@@ -67,12 +67,21 @@
 }
 - (IBAction)connectBtnClicked:(id)sender {
     NSString *roomid = self.roomConnect.text;
+    
+    /**/
     currentRoomId = roomid;
+    /**/
+    
+     /* Unlock nếu là app EPL và lock lệnh xét currentRoomId = roomid trên*/
+    /*NSString *videoId = self.roomConnect.text;
+     */
     
     if ((roomid == nil) || ([roomid isEqualToString:@""])){
         self.FBIwarningView.text = @"Room ID invalid";
     }
     else {
+        
+        /**/
         [[MdcLib sharedInstance] joinRoom:roomid dataCallback:^(id  _Nullable data) {
             self.messageView.text = [NSString stringWithFormat:@"%@\n",data];
         } joinError:^(NSError * _Nullable error) {
@@ -84,11 +93,20 @@
                 NSLog(@"connectBtnClicked %@", @"ok");
             }
         }];
+        /**/
         
-        //neeu set dataCallback = nil, tin nhan cua room tat ca nhan ve delegate onCommentMesg.
-        
-        /*[[MdcLib sharedInstance] joinRoom:roomid dataCallback:nil joinError:^(NSError * _Nullable error) {
-            self.FBIwarningView.text = [NSString stringWithFormat:@"joinRoom %@ success",roomid ];
+        /* Bỏ method joinroom trên và unlock method joinRoomWithVideoID nếu là app EPL */
+        /*[[MdcLib sharedInstance] joinRoomWithVideoID:videoId dataCallback:^(id  _Nullable data) {
+            self.messageView.text = [NSString stringWithFormat:@"%@\n",data];
+        } joinError:^(NSError * _Nullable error, NSString * _Nullable mesg) {
+            if (error){
+                self.FBIwarningView.text = [NSString stringWithFormat:@"Error :%@",error.localizedDescription];
+                NSLog(@"connectBtnClicked %@", error.localizedDescription);
+            } else {
+                self.FBIwarningView.text = [NSString stringWithFormat:@"joinRoom %@ success",roomid ];
+                NSLog(@"connectBtnClicked %@", @"ok");
+                currentRoomId = mesg;
+            }
         }];*/
     }
     

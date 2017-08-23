@@ -848,6 +848,13 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void) joinRoom:(NSString *_Nonnull)roomId dataCallback:(void (^ _Nullable)(id _Nullable data))dataResponse joinError:(void (^ _Nullable)(NSError *_Nullable error))response;
 
+/**
+ Join to comment in room
+ 
+ @param videoId Video ID
+ @param response  if error = nil, join success, mesg = Conversation id.
+ */
+- (void) joinRoomWithVideoID:(NSString *_Nonnull)videoId dataCallback:(void (^ _Nullable)(id _Nullable data))dataResponse joinError:(void (^ _Nullable)(NSError *_Nullable error, NSString *_Nullable mesg))response;
 
 /**
  leave room, don'n listen mesg in room
@@ -926,6 +933,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)onConnected;
 
 - (void)disConnected;
+
+- (void)onSystemError:(NSError *)error;
 
 @end
 
