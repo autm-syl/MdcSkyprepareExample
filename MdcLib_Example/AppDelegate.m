@@ -115,6 +115,7 @@
 
 - (void)onSystemError:(NSError *)error{
     // lỗi trong hệ thống của lib MDC
+    NSLog(@"onSystemError");
 }
 
 
